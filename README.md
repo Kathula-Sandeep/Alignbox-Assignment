@@ -1,4 +1,4 @@
-# Sandeep Assignment
+# AlignBox Assignment
 
 This project is a simple web application with a Node.js backend and a static frontend. It demonstrates basic CRUD operations and database integration.
 
