@@ -3,6 +3,8 @@ const messagesEl = document.getElementById("messages");
 const input = document.getElementById("messageInput");
 const sendBtn = document.getElementById("sendBtn");
 const anonToggle = document.getElementById("anonToggle");
+const anonBanner = document.getElementById("anonBanner");
+const anonMessage = document.getElementById("anonMessage");
 
 let userName = "You";
 let anonymous = false;
@@ -15,7 +17,12 @@ socket.on("connect", () => socket.emit("join_group", groupId));
 // Toggle anonymous
 anonToggle.addEventListener("click", () => {
   anonymous = !anonymous;
-  document.getElementById("anonBanner").classList.toggle("hidden", !anonymous);
+
+  // Show/hide banner at top
+  anonBanner.classList.toggle("hidden", !anonymous);
+
+  // Show/hide message above input box
+  anonMessage.classList.toggle("hidden", !anonymous);
 });
 
 // Load previous messages
